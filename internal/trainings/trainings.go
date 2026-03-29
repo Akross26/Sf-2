@@ -33,6 +33,14 @@ func (t *Training) Parse(datastring string) (err error) {
 		return err
 	}
 
+	if steps <= 0 {
+		return fmt.Errorf("invalid data")
+	}
+
+	if duration <= 0 {
+		return fmt.Errorf("invalid data")
+	}
+
 	t.Steps = steps
 	t.TrainingType = parts[1]
 	t.Duration = duration

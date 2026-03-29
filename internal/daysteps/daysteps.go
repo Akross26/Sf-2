@@ -32,6 +32,10 @@ func (ds *DaySteps) Parse(datastring string) (err error) {
 		return err
 	}
 
+	if steps <= 0 || duration <= 0 {
+		return fmt.Errorf("invalid data")
+	}
+
 	ds.Steps = steps
 	ds.Duration = duration
 
